@@ -1,0 +1,46 @@
+using System;
+
+namespace Dersler
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Cumlenizi daxil edin: ");
+            string str = Console.ReadLine();
+            Console.WriteLine("Neticeniz:" + (CumleniCevir(str) + ":)"));
+
+        }
+
+
+        static string TersChevir(string herfler)
+        {
+
+            char[] strArr = herfler.ToCharArray();
+            string netice = String.Empty;
+
+            for (int j = strArr.Length - 1; j > -1; j--)
+            {
+                netice += strArr[j];
+
+            }
+
+            return netice;
+        }
+
+
+        static string CumleniCevir(string cumle)
+
+        {
+            string result = String.Empty;
+            string[] ayir = cumle.Split(' ');
+
+            for (int i = 0; i < ayir.Length; i++)
+            {
+                result += TersChevir(ayir[i] + " ");
+            }
+
+            return result;
+        }
+    }
+}
